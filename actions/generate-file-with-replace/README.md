@@ -37,6 +37,7 @@ This can be very useful in case of generating:
 Template file which will be used for making a copy.
 
 **Required:** false  
+
 **Default:** .env.example 
 
 **Usage:** 
