@@ -1,0 +1,16 @@
+name: init-current-datetime
+author: Juzt Studio <by Egor Pogodin>
+
+decription: Set current date and time to the variables - CURRENT_TIME, CURRENT_DATE, CURRENT_DATETIME
+
+runs:
+  using: "composite"
+  steps:
+    - uses: ./.github/actions/init-timezone
+
+    - name: Init date/time variables
+      shell: bash
+      run: | 
+        echo "CURRENT_TIME=$(date +'%H-%M')" >> $GITHUB_ENV
+        echo "CURRENT_DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+        echo "CURRENT_DATETIME=$(date +'%Y-%m-%d_%H-%M')" >> $GITHUB_ENV

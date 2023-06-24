@@ -1,0 +1,32 @@
+name: generate-file-with-replace
+author: Juzt Studio <by Egor Pogodin>
+
+decription: Action to generate new file from passed template and replace varaible names wrapper in double braces - {{VARIABLE_NAME}}
+
+inputs:
+  file-source:
+    description: 'A source file template. Should contain marks {{VARIABLE_NAME}} for replacement'
+    required: true
+    default: .env.example
+
+  file-target:
+    description: 'A target file name'
+    required: true
+    default: .env
+
+  variables:
+    description: 'Variables to pass to the action'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Create file and make replacements
+      shell: bash
+      run: |
+        install -D ${{ inputs.file-source }} ${{ inputs.file-target }}
+        while IFS= read -r variable; do
+          var_name="${variable%=*}"
+          var_value="${variable#*=}"
+          sed -i "s|{{$var_name}}|$var_value|g" ${{ inputs.file-target }}
+        done <<< "${{ inputs.variables }}"

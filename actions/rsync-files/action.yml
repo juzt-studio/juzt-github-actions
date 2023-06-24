@@ -1,0 +1,44 @@
+name: rsync-files
+author: Juzt Studio <by Egor Pogodin>
+
+decription: Copy files to remote server using Rsync. SSH Private key should be already added
+
+inputs:
+  server-host:
+    description: 'Server HOST for SSH connect'
+    required: true
+
+  server-user:
+    description: 'Server USER name for SSH connect'
+    required: true
+
+  server-port:
+    description: 'Server PORT number for SSH connect'
+    required: false
+    default: 22
+
+  project-dir:
+    description: 'Project location directory started from root'
+    required: true
+
+  project-folder:
+    description: 'Project root folder name'
+    required: true
+
+  ignore-file:
+    description: 'Filename which contains list of files/dirs to ignore while copying'
+    required: false
+    default: '.rsyncignore'
+
+  copy-from:
+    description: 'Path which contains source files to copy'
+    required: false
+    default: .
+
+runs:
+  using: "composite"
+  steps:
+    - name: Copy new project files
+      shell: bash
+      run: | 
+        rsync -avz -e "ssh -p ${{ inputs.server-port }}" --exclude-from=${{ inputs.ignore-file }} ${{ inputs.copy-from }} ${{ inputs.server-user }}@${{ inputs.server-host }}:${{ inputs.project-dir }}/${{ inputs.project-folder }}

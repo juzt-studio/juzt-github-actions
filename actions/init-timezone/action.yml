@@ -1,0 +1,18 @@
+name: init-timezone
+author: Juzt Studio <by Egor Pogodin>
+
+decription: Set workflow timezone
+
+inputs:
+  timezone:
+    description: 'Timezone you want to use'
+    required: false
+    default: "Europe/Moscow"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set Europe/Moscow timezone
+      uses: szenius/set-timezone@v1.0
+      with:
+        timezoneLinux: ${{ inputs.timezone }}

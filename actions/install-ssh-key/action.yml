@@ -1,0 +1,20 @@
+name: install-ssh-key
+author: Juzt Studio <by Egor Pogodin>
+
+decription: Install SSH Key
+
+inputs:
+  ssh-private-key:
+    description: 'SSH Private Key'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install SSH Private Key
+      shell: bash
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ inputs.ssh-private-key }}" >> ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
