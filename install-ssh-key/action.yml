@@ -1,7 +1,7 @@
 name: install-ssh-key
 author: Juzt Studio <by Egor Pogodin>
 
-decription: Install SSH Key
+description: Install SSH Key
 
 inputs:
   ssh-private-key:

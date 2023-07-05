@@ -1,7 +1,7 @@
 name: rsync-files
 author: Juzt Studio <by Egor Pogodin>
 
-decription: Copy files to remote server using Rsync. SSH Private key should be already added
+description: Copy files to remote server using Rsync. SSH Private key should be already added
 
 inputs:
   server-host:
@@ -9,7 +9,7 @@ inputs:
     required: true
 
   server-user:
-    description: 'Server USER name for SSH connect'
+    description: 'Server USERNAME for SSH connect'
     required: true
 
   server-port:

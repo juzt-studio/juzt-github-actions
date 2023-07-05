@@ -17,7 +17,7 @@ This can be very useful in case of generating:
 
 ```yaml
   - name: Generate .env file
-    uses: juzt-studio/juzt-github-actions/actions/generate-file-with-replace@master
+    uses: juzt-studio/juzt-github-actions/generate-file-with-replace@master
     with:
       file-source: .env.example # optional
       file-target: .env         # optional

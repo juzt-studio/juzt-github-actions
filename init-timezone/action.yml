@@ -1,7 +1,7 @@
 name: init-timezone
 author: Juzt Studio <by Egor Pogodin>
 
-decription: Set workflow timezone
+description: Set workflow timezone
 
 inputs:
   timezone:
@@ -12,8 +12,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - uses: actions/checkout@v3
-
     - name: Set Europe/Moscow timezone
       uses: szenius/set-timezone@v1.0
       with:

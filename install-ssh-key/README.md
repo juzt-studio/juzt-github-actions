@@ -10,7 +10,7 @@ This action add a private key to the workflow, which can be used after for conne
 
 ```yaml
   - name: Istall SSH Key
-    uses: juzt-studio/juzt-github-actions/actions/install-ssh-key@master
+    uses: juzt-studio/juzt-github-actions/install-ssh-key@master
     with:
       ssh-private-key: ${{ secrets.PRIVATE_SSH_KEY }}
 ```

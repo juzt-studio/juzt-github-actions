@@ -14,7 +14,7 @@ This action depends on [szenius/set-timezone](https://github.com/szenius/set-tim
 
 ```yaml
   - name: Init date/time
-    uses: juzt-studio/juzt-github-actions/actions/init-timezone@master
+    uses: juzt-studio/juzt-github-actions/init-timezone@master
     with:
       timezone: 'Asia/Seoul' # Optional
 ```

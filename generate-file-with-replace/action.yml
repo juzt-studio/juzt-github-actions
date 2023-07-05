@@ -1,7 +1,7 @@
 name: generate-file-with-replace
 author: Juzt Studio <by Egor Pogodin>
 
-decription: Action to generate new file from passed template and replace varaible names wrapper in double braces - {{VARIABLE_NAME}}
+description: Action to generate new file from passed template and replace varaible names wrapper in double braces - {{VARIABLE_NAME}}
 
 inputs:
   file-source:

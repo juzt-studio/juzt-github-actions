@@ -1,13 +1,11 @@
 name: init-current-datetime
 author: Juzt Studio <by Egor Pogodin>
 
-decription: Set current date and time to the variables - CURRENT_TIME, CURRENT_DATE, CURRENT_DATETIME
+description: Set current date and time to the variables - CURRENT_TIME, CURRENT_DATE, CURRENT_DATETIME
 
 runs:
   using: "composite"
   steps:
-    - uses: actions/checkout@v3
-  
     - uses: ./.github/actions/init-timezone
 
     - name: Init date/time variables

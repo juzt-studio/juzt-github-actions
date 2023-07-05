@@ -10,7 +10,7 @@ This action will set date and time variables to env, which can be used in the wo
 
 ```yaml
   - name: Init date/time
-    uses: juzt-studio/juzt-github-actions/actions/init-current-datetime@master
+    uses: juzt-studio/juzt-github-actions/init-current-datetime@master
 ```
 
 ## Output
