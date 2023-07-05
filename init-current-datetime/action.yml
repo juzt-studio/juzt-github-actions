@@ -6,6 +6,8 @@ description: Set current date and time to the variables - CURRENT_TIME, CURRENT_
 runs:
   using: "composite"
   steps:
+    - uses: actions/checkout@v3
+
     - uses: ./.github/actions/init-timezone
 
     - name: Init date/time variables
