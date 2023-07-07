@@ -11,7 +11,7 @@ inputs:
   file-path:
     description: "File location"
     required: false
-    default: ".config/composer"
+    default: "~/.config/composer"
 
   file-name:
     description: "File name"

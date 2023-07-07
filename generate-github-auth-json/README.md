@@ -13,8 +13,8 @@ This action will generate json file for github auth.
     uses: juzt-studio/juzt-github-actions/generate-github-auth-json@master
     with:
       access-token: ${{ secrets.JUZT_PLUGIN_ACCESS_TOKEN }}
-      file-path: .config/composer # optional
-      file-name: auth.json        # optional
+      file-path: ~/.config/composer # optional
+      file-name: auth.json          # optional
 ```
 
 ## Parameters
@@ -37,7 +37,7 @@ Where file will be generated
 
 **Required:** false
 
-**Default:** .config/composer
+**Default:** ~/.config/composer
 
 ---
 
