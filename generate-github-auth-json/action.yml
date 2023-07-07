@@ -1,0 +1,31 @@
+name: generate-github-auth-json
+author: Juzt Studio <by Egor Pogodin>
+
+description: Action to generate new github auth.json file to have access to private repos
+
+inputs:
+  access-token:
+    description: "GitHub Personal Access Token"
+    required: true
+
+  file-path:
+    description: "File location"
+    required: false
+    default: ".config/composer"
+
+  file-name:
+    description: "File name"
+    required: false
+    default: "auth.json"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Create auth.json
+      shell: bash
+      run: |
+        echo '{
+          "github-oauth": {
+            "github.com": "${{ inputs.access-token }}"
+          }
+        }' > ${{ inputs.file-path }}/${{ inputs.file-name }}
