@@ -28,4 +28,4 @@ runs:
           "github-oauth": {
             "github.com": "${{ inputs.access-token }}"
           }
-        }' > ${{ inputs.file-path }}/${{ inputs.file-name }}
+        }' >> ${{ inputs.file-path }}/${{ inputs.file-name }}
