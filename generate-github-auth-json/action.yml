@@ -24,7 +24,7 @@ runs:
     - name: Create auth.json
       shell: bash
       run: |
-        install -Dv ${{ inputs.file-name }} ${{ inputs.file-path }}
+        mkdir -p ${{ inputs.file-path }}
         echo '{
           "github-oauth": {
             "github.com": "${{ inputs.access-token }}"
